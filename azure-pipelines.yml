@@ -18,13 +18,16 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'aks-chandra-sock-shop'
     namespace: 'sock-shop'
     command: 'apply'
-    arguments: '-f manifest/'
+    useConfigurationFile: true
+    configuration: 'manifest/*'
+    arguments: '-f'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
     outputFormat: 'yaml'
