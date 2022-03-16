@@ -24,6 +24,6 @@ steps:
     kubernetesServiceEndpoint: 'aks-chandra-sock-shop'
     namespace: 'sock-shop'
     command: 'apply'
-    arguments: '-f'
+    arguments: '-f manifest/'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
