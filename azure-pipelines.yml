@@ -27,3 +27,4 @@ steps:
     arguments: '-f manifest/'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
+    outputFormat: 'yaml'
