@@ -23,4 +23,4 @@ steps:
     action: 'deploy'
     kubernetesServiceConnection: 'aks-chandra-sock-shop'
     namespace: 'sock-shop'
-    manifests: '*manifests'
+    manifests: '*manifests/*.yaml'
