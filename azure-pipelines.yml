@@ -21,5 +21,5 @@ steps:
 - task: KubernetesManifest@0
   inputs:
     action: 'deploy'
-    kubernetesServiceConnection: 'aks-chandra-default'
+    kubernetesServiceConnection: 'aks-chandra-sock-shop'
     manifests: '*manifests/*.yaml'
