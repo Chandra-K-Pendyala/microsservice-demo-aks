@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: microsericedemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microsericedemo
+  template:
+    metadata:
+      labels:
+        app: microsericedemo 
+    spec:
+      containers:
+        - name: microsericedemo 
+          image: aksdevopsacr45.azurecr.io/microsericedemo
+          ports:
+          - containerPort: 80
