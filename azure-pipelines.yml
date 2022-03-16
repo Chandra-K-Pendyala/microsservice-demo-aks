@@ -27,4 +27,3 @@ steps:
     arguments: '-f'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
-    outputFormat: 'yaml'
