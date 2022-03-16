@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -18,16 +19,10 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-
-- task: Kubernetes@1
+- task: KubernetesManifest@0
   inputs:
-    connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'aks-chandra-sock-shop'
+    action: 'deploy'
+    kubernetesServiceConnection: 'aks-chandra-sock-shop'
     namespace: 'sock-shop'
-    command: 'apply'
-    useConfigurationFile: true
-    configuration: 'manifest/*'
-    arguments: '-f'
-    secretType: 'dockerRegistry'
-    containerRegistryType: 'Azure Container Registry'
-    outputFormat: 'yaml'
+    manifests: 'manifests/*'
+
